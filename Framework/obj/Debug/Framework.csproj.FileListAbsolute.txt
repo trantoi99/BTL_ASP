@@ -1,0 +1,14 @@
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\Framework.dll.config
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\Framework.dll
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\Framework.pdb
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\source\repos\btl_web\Framework\obj\Debug\Framework.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\btl_web\Framework\obj\Debug\Framework.csproj.CopyComplete
+C:\Users\Administrator\source\repos\btl_web\Framework\obj\Debug\Framework.dll
+C:\Users\Administrator\source\repos\btl_web\Framework\obj\Debug\Framework.pdb
+C:\Users\Administrator\source\repos\btl_web\Framework\obj\Debug\Framework.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\EPPlus.dll
+C:\Users\Administrator\source\repos\btl_web\Framework\bin\Debug\EPPlus.xml

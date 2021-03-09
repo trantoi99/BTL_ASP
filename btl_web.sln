@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "btl_web", "btl_web\btl_web.csproj", "{904D48D0-016F-426E-AB0E-7F107919D422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{F4159F3D-4133-4436-85E1-291EFDF588AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{904D48D0-016F-426E-AB0E-7F107919D422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{904D48D0-016F-426E-AB0E-7F107919D422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{904D48D0-016F-426E-AB0E-7F107919D422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{904D48D0-016F-426E-AB0E-7F107919D422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4159F3D-4133-4436-85E1-291EFDF588AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4159F3D-4133-4436-85E1-291EFDF588AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4159F3D-4133-4436-85E1-291EFDF588AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4159F3D-4133-4436-85E1-291EFDF588AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60AD9710-7138-4320-BE10-301967E35BE1}
+	EndGlobalSection
+EndGlobal

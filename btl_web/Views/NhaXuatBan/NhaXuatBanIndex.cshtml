@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "NhaXuatBanIndex";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="row text-right">
+            <button class="btn btn-info" id="btnadd" data-target="#myModal" data-toggle="modal" onclick="resetinput()">Thêm mới</button>
+        </div>
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="#">Home</a>
+                </li>
+
+                <li>
+                    <a href="#">Tables</a>
+                </li>
+                <li class="active">Simple &amp; Dynamic</li>
+            </ul><!-- /.breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                @using (Html.BeginForm("timkiem", "NhaXuatBan", FormMethod.Post))
+                {
+                    <div class="input-group mb-3">
+                        @Html.TextBox("tuKhoa", null, new { @class = "form-control", @style = "width : 200px" })
+                        <input type="submit" value="Tìm kiếm" style="height:35px" class="btn btn-info" />
+                    </div>
+
+                }
+            </div><!-- /.nav-search -->
+        </div>
+        <div class="page-content">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="col-sm-12">
+                <table id="simple-table" class="table  table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="center">
+                                <label class="pos-rel">
+                                    <input type="checkbox" class="ace" />
+                                    <span class="lbl"></span>
+                                </label>
+                            </th>
+                            <th>Ma nha xuat ban</th>
+                            <th>Tên nha xuat ban</th>
+                            <th>Dia chi</th>
+                            <th>Xử lý</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div><!-- /.span -->
+            <div class="col-md-12" style="text-align:right">
+                <a href="@Url.Action("ToExcel","NhaXuatBan")" class="btn btn-default"><i class="fa fa-save" aria-hidden="true"></i> Export Excel</a>
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="width:75%; margin: 0 auto;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fa fa-home"></i>  Thông tin nhà xuất bản
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body validate-form">
+                <div class="row form-group">
+                    <label for="maduan" class="col-sm-3 text-right"><strong>Mã nhà xuất bản</strong><span style="color:red;">*</span></label>
+                    <div class="col-md-9 text-left">
+                        <div class="input-group validate-input" data-validate="Bạn cần nhập mã nhà xuất bản">
+                            <input type="text" class="form-control" placeholder="Mã nhà xuất bản" id="txtMaNhaXuatBan" />
+                            <span class="focus-input100"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label for="maduan" class="col-sm-3 text-right"><strong>Tên nhà xuất bản</strong><span style="color:red;">*</span></label>
+                    <div class="col-md-9 text-left">
+                        <div class="input-group validate-input" data-validate="Bạn cần nhập tên nhà xuất bản">
+                            <input type="text" class="form-control" placeholder="Tên nhà xuất bản" id="txtTenNhaXuatBan" />
+                            <span class="focus-input100"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label for="maduan" class="col-sm-3 text-right"><strong>Địa chỉ</strong><span style="color:red;">*</span></label>
+                    <div class="col-md-9 text-left">
+                        <div class="input-group validate-input" data-validate="Bạn cần nhập địa chỉ">
+                            <input type="text" class="form-control" placeholder="địa chỉ" id="txtDiaChi" />
+                            <span class="focus-input100"></span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="name" id="txtId" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Thoát
+                </button>
+                <button type="button" class="btn btn-info" id="btnsave">Lưu <i class="fa fa-download"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="~/Content/alert.css" />
+<link rel="stylesheet" href="~/Content/assets/css/font-awesome.min.css" />
+@section script{
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Content/assets/javacript-admin/NhaXuatBan.js"></script>
+}
+
+
+

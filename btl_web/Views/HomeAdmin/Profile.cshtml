@@ -1,0 +1,91 @@
+﻿@model Framework.EF.User
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <h2><marquee>Profile</marquee></h2>
+    <table class="table table-hover table-bordered" style="margin-top:5%;width:75%;margin-left:20%">
+        <tr>
+            <th>
+                Tên người dùng
+            </th>
+            <td>
+                <div class="col-md-6">
+                    <input class="form-control" value="@Model.FullName" id="txtFullName" placeholder="Tên người dùng" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Địa chỉ
+            </th>
+            <td>
+                <div class="col-md-6">
+                    <input class="form-control" value="@Model.Email" id="txtEmail" placeholder="Email" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Email
+            </th>
+            <td>
+
+                <div class="col-md-6">
+                    <input class="form-control" value="@Model.Address" id="txtAddress" placeholder="Địa chỉ" />
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div style="margin-left:40%">
+        <button class="btn btn-info" id="btnSave" style="width:60px">Lưu</button>
+        <a class="btn btn-warning" style="width:60px" href="@Url.Action("Index","HomeAdmin")"> Back</a>
+    </div>
+</body>
+</html>
+
+
+
+
+@section script{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnSave").click(function () {
+                const formData = new FormData();
+                formData.append('FullName', $('#txtFullName').val());
+                formData.append('Email', $('#txtEmail').val());
+                formData.append('Address', $('#txtAddress').val());
+                postData('POST', '/HomeAdmin/UpdateProfile', formData).then(function (msg) {
+                    if (msg.Error == false) {
+                        alert(msg.Title);
+                        window.location.reload();
+                    }
+                    else {
+                        alert(msg.Title);
+                    }
+                })
+            })
+        });
+        async function postData(verb, url, data) {
+            const response = await fetch(url, {
+                method: verb,
+                mode: 'cors',
+                cache: 'default',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: data
+            }).catch(error => console.error('Error', error));
+            return response.json();
+        };
+    </script>
+
+}
+

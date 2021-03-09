@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Framework.EF.Sach>
+
+@{
+    ViewBag.Title = "timkiem";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="#">Home</a>
+                </li>
+
+                <li>
+                    <a href="#">Tables</a>
+                </li>
+                <li class="active">Simple &amp; Dynamic</li>
+            </ul><!-- /.breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+
+                @using (Html.BeginForm("timkiem", "Sach", FormMethod.Post))
+                {
+                    <div class="input-group mb-3">
+                        @Html.TextBox("tuKhoa", null, new { @class = "form-control", @style = "width : 200px" })
+                        <input type="submit" value="Tìm kiếm" style="height:35px" class="btn btn-info" />
+                    </div>
+
+                }
+
+            </div><!-- /.nav-search -->
+
+        </div>
+        <div class="page-content">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="container-fluid">
+                <div class="col-sm-12">
+                    <table id="simple-table" class="table  table-bordered table-hover">
+                        <thead>
+                            <tr>
+
+                                <th>Ma sach</th>
+                                <th>Tên sach</th>
+                                <th>Nam xuat ban</th>
+                                <th>So luong</th>
+                                <th>Ma ngon ngu</th>
+                                <th>Ma nha xuat ban</th>
+                                <th>Ma tac gia</th>
+                                <th>Ma loai</th>
+                                <th>Ma vi tri</th>
+                                <th>Ma kho</th>
+
+
+                            </tr>
+
+                        </thead>
+                        <tbody id="table">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Masach)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Tensach)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Namxuatban)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Soluong)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Mangonngu)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Manhaxuatban)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Matacgia)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Maloai)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Mavitri)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.Makho)
+                                    </th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div><!-- /.span -->
+                <div class="col-md-12" style="text-align:right">
+                    <a href="@Url.Action("SachIndex","Sach")" class="btn btn-success">Back</a>
+                </div>
+                <!-- PAGE CONTENT ENDS -->
+            </div>
+        </div>
+    </div>
+</div>
+
